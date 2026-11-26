@@ -1,0 +1,29 @@
+[services.auth]
+root = "services/auth"
+hosts = ["auth.internal"]
+openapi = "services/auth/openapi.json"
+
+[services.checkout]
+root = "services/checkout"
+hosts = ["checkout.internal"]
+
+[services.notifications]
+root = "services/notifications"
+hosts = ["notifications.internal"]
+
+[services.cart]
+root = "services/cart"
+hosts = ["cart.internal"]
+openapi = "services/cart/openapi.json"
+
+[services.payment]
+root = "services/payment"
+hosts = ["payment.internal"]
+
+[services.shipping]
+root = "services/shipping"
+hosts = ["shipping.internal"]
+
+[services.audit]
+root = "services/audit"
+hosts = ["audit.internal"]

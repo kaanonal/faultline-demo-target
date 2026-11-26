@@ -1,0 +1,54 @@
+{
+  "openapi": "3.1.0",
+  "info": { "title": "Cart Service", "version": "1.0.0" },
+  "paths": {
+    "/carts/{id}": {
+      "get": {
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "integer" } }
+        ],
+        "responses": {
+          "200": { "$ref": "#/components/responses/CartResponse" }
+        }
+      }
+    },
+    "/health": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Health check",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": { "status": { "type": "string" } }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "CartResponse": {
+        "description": "Shopping cart payload",
+        "content": {
+          "application/json": { "schema": { "$ref": "#/components/schemas/Cart" } }
+        }
+      }
+    },
+    "schemas": {
+      "Cart": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "integer" },
+          "item": { "type": "string" },
+          "price": { "type": "number" },
+          "currency": { "type": "string" }
+        }
+      }
+    }
+  }
+}

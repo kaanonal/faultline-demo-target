@@ -8,7 +8,6 @@ def get_cart(cart_id: int) -> dict:
         "id": cart_id,
         "item": "Mechanical Keyboard",
         "price": base_price + _calculate_tax(base_price),
-        "currency": "USD",
     }
 
 

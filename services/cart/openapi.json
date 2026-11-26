@@ -1,14 +1,26 @@
 {
   "openapi": "3.1.0",
-  "info": { "title": "Cart Service", "version": "1.0.0" },
+  "info": {
+    "title": "Cart Service",
+    "version": "1.0.0"
+  },
   "paths": {
     "/carts/{id}": {
       "get": {
         "parameters": [
-          { "name": "id", "in": "path", "required": true, "schema": { "type": "integer" } }
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
         ],
         "responses": {
-          "200": { "$ref": "#/components/responses/CartResponse" }
+          "200": {
+            "$ref": "#/components/responses/CartResponse"
+          }
         }
       }
     },
@@ -21,7 +33,11 @@
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "properties": { "status": { "type": "string" } }
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -35,7 +51,11 @@
       "CartResponse": {
         "description": "Shopping cart payload",
         "content": {
-          "application/json": { "schema": { "$ref": "#/components/schemas/Cart" } }
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Cart"
+            }
+          }
         }
       }
     },
@@ -43,10 +63,18 @@
       "Cart": {
         "type": "object",
         "properties": {
-          "id": { "type": "integer" },
-          "item": { "type": "string" },
-          "price": { "type": "number" },
-          "currency": { "type": "string" }
+          "id": {
+            "type": "integer"
+          },
+          "item": {
+            "type": "string"
+          },
+          "price": {
+            "type": "string"
+          },
+          "currency": {
+            "type": "string"
+          }
         }
       }
     }
